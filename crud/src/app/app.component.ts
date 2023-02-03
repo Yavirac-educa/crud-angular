@@ -8,7 +8,7 @@ import { MatTable } from '@angular/material/table';
 })
 export class AppComponent {
   title = 'crud';
-  columnas: string[] = ['id', 'nombre Equipo','fecha Creacion','ruc','fecha campeonato', 'borrar', 'editar'];
+  columnas: string[] = ['id', 'nombre','fechaCreacion','ruc','fechaCampeonato', 'borrar', 'editar'];
 
   datos: Articulo[] = [new Articulo(1,'barcelona', new Date,2, new Date),
   new Articulo(2, 'Aucas',new Date,33,new Date),
@@ -29,19 +29,19 @@ editar(articulo: Articulo){
 
 }
 agregar() {
-    this.datos.push(new Articulo(this.articuloselect.id, this.articuloselect.nombreEquipo, this.articuloselect.fechaCreacion,this.articuloselect.ruc,this.articuloselect.fechaCampeonato));
+    this.datos.push(new Articulo(this.articuloselect.id, this.articuloselect.nombre, this.articuloselect.fechaCreacion,this.articuloselect.ruc,this.articuloselect.fechaCampeonato));
     this.tabla1.renderRows();
   this.articuloselect = new Articulo(0, "",new Date,0,new Date);
 }
 cambiar(){
   if (this.articuloselect.id === 0){
-    this.datos.push(new Articulo(this.articuloselect.id, this.articuloselect.nombreEquipo, this.articuloselect.fechaCreacion,this.articuloselect.ruc,this.articuloselect.fechaCampeonato));
+    this.datos.push(new Articulo(this.articuloselect.id, this.articuloselect.nombre, this.articuloselect.fechaCreacion,this.articuloselect.ruc,this.articuloselect.fechaCampeonato));
     this.tabla1.renderRows();
   }
   this.articuloselect = new Articulo(0, "",new Date,0,new Date);
 }
 }
 export class Articulo {
-  constructor(public id: number, public nombreEquipo: string,public fechaCreacion:Date,public ruc:number, public fechaCampeonato:Date) {
+  constructor(public id: number, public nombre: string,public fechaCreacion:Date,public ruc:number, public fechaCampeonato:Date) {
   }
 }

@@ -5,14 +5,14 @@
     <td mat-cell *matCellDef="let articulo"> {{articulo.id}} </td>
   </ng-container>
 
-  <ng-container matColumnDef="nombreEquipo">
+  <ng-container matColumnDef="nombre">
     <th mat-header-cell *matHeaderCellDef> Nombre Eqipo</th>
-    <td mat-cell *matCellDef="let articulo"> {{articulo.nombreEquipo}} </td>
+    <td mat-cell *matCellDef="let articulo"> {{articulo.nombre}} </td>
   </ng-container>
 
-  <ng-container matColumnDef="FechaCampeonato">
+  <ng-container matColumnDef="fechaCreacion">
     <th mat-header-cell *matHeaderCellDef> Fecha Campeonato</th>
-    <td mat-cell *matCellDef="let articulo"> {{articulo.fechaCampeonato}} </td>
+    <td mat-cell *matCellDef="let articulo"> {{articulo.fechaCreacion}} </td>
   </ng-container>
 
   <ng-container matColumnDef="ruc">
@@ -20,9 +20,9 @@
     <td mat-cell *matCellDef="let articulo"> {{articulo.ruc}} </td>
   </ng-container>
 
-  <ng-container matColumnDef="FechaCreacion">
+  <ng-container matColumnDef="fechaCampeonato">
     <th mat-header-cell *matHeaderCellDef> Fecha Creacion</th>
-    <td mat-cell *matCellDef="let articulo"> {{articulo.fechaCreacion}} </td>
+    <td mat-cell *matCellDef="let articulo"> {{articulo.fechaCampeonato}} </td>
   </ng-container>
 
   <ng-container matColumnDef="borrar">
@@ -52,11 +52,11 @@
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="articuloselect.nombreEquipo" type="text" placeholder="Ingrese Nombre del equipo">
+    <input matInput [(ngModel)]="articuloselect.nombre" type="text" placeholder="Ingrese Nombre del equipo">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="articuloselect.fechaCampeonato" type="date" placeholder="Ingrese la fecha del campeonato">
+    <input matInput [(ngModel)]="articuloselect.fechaCreacion" type="date" placeholder="Ingrese la fecha del campeonato">
   </mat-form-field>
 
   <mat-form-field>
@@ -64,7 +64,7 @@
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="articuloselect.fechaCreacion" type="date" placeholder="Ingrese la creacion">
+    <input matInput [(ngModel)]="articuloselect.fechaCampeonato" type="date" placeholder="Ingrese la creacion">
   </mat-form-field>
 
   <button mat-raised-button color="primary" (click)="agregar()">Agregar</button>
