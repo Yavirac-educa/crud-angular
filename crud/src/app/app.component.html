@@ -1,0 +1,74 @@
+<table mat-table [dataSource]="datos" class="mat-elevation-z8" #tabla1>
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> id </th>
+    <td mat-cell *matCellDef="let articulo"> {{articulo.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="nombreEquipo">
+    <th mat-header-cell *matHeaderCellDef> Nombre Eqipo</th>
+    <td mat-cell *matCellDef="let articulo"> {{articulo.nombreEquipo}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="FechaCampeonato">
+    <th mat-header-cell *matHeaderCellDef> Fecha Campeonato</th>
+    <td mat-cell *matCellDef="let articulo"> {{articulo.fechaCampeonato}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="ruc">
+    <th mat-header-cell *matHeaderCellDef> Ruc</th>
+    <td mat-cell *matCellDef="let articulo"> {{articulo.ruc}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="FechaCreacion">
+    <th mat-header-cell *matHeaderCellDef> Fecha Creacion</th>
+    <td mat-cell *matCellDef="let articulo"> {{articulo.fechaCreacion}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="borrar">
+    <th mat-header-cell *matHeaderCellDef> Borrar </th>
+    <td mat-cell *matCellDef="let j = index;">
+      <button mat-raised-button color="warn" focusable="false" (click)="borrarFila(j)">
+        Eliminar
+      </button>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="editar">
+    <th mat-header-cell *matHeaderCellDef> Editar </th>
+    <td mat-cell *matCellDef="let articuloselect;">
+      <button mat-raised-button color="warn" focusable="false" (click)="editar(articuloselect)">
+        Editar
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+</table>
+<div class="contenedor">
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="articuloselect.id" type="number" placeholder="Ingrese código">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="articuloselect.nombreEquipo" type="text" placeholder="Ingrese Nombre del equipo">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="articuloselect.fechaCampeonato" type="date" placeholder="Ingrese la fecha del campeonato">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="articuloselect.ruc" type="number" placeholder="Ingrese el ruc">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="articuloselect.fechaCreacion" type="date" placeholder="Ingrese la creacion">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="agregar()">Agregar</button>
+
+  <button mat-raised-button class="cambiar" (click)="cambiar()">Cambiar</button>
+
+</div>
